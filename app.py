@@ -98,7 +98,7 @@ def handler(event, context):
     manga = manga_filter(cvimg, screen, 70, 120)
     
     # 背景エフェクトがあれば適用する
-    if back_effect == 'none':
+    if back_effect == 0 or back_effect == 'none':
         pass
     else:
         back_effect_name = 'images/back_effects/{}.jpg'.format(str(back_effect))
@@ -106,7 +106,7 @@ def handler(event, context):
         manga = back_filter(cvimg, manga, back_img, 70)
 
     # 全面エフェクトがあれば適用する
-    if front_effect == 'none':
+    if front_effect == 0 or front_effect == 'none':
         pass
     else:
         front_effect_name = 'images/front_effects/{}.png'.format(str(front_effect))
